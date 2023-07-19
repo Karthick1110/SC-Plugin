@@ -1,0 +1,41 @@
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "com.gradle.publish:plugin-publish-plugin:latest.release"
+  }
+}
+
+apply plugin: "com.gradle.plugin-publish"
+apply plugin: "groovy"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+}
+
+version = "0.0.1"
+group = "io.karthick"
+
+gradlePlugin {
+  website = "https://github.com/Karthick1110/Gradle-Sauce-Connect-Plugin"
+  vcsUrl = "https://github.com/Karthick1110/Gradle-Sauce-Connect-Plugin.git"
+  description = "UnOfficial release of SauceConnectPlugin"
+
+  plugins {
+    SauceConnectPlugin {
+      id = "io.karthick.SauceConnectPlugin"
+      displayName = "Sauce Connect Plugin"
+      implementationClass= "com.karthick.SauceConnectPlugin"
+      description = "UnOfficial release of SauceConnectPlugin"
+      tags.addAll('SauceLabs','SauceConnect')
+    }
+  }
+}
