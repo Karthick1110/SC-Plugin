@@ -22,3 +22,5 @@ downloaded
 - [x] Rename un-archived artifact for easy access
 - [x] Open SauceConnect tunnel at background (must work on Darwin/Windows/Linux)
 - [x] Shutdown SauceConnect if it is running (must work on Darwin/Windows/Linux)
+
+Credit goes to : johnroach
